@@ -72,11 +72,12 @@ public class CourseControllerTest {
         Mockito.when(courseService.findAll()).thenReturn(courseList);
 
         RequestBuilder rb = MockMvcRequestBuilders.get(apiUrl).accept(MediaType.APPLICATION_JSON);
-        // the following actually performs a real controller call
+
+        // the following performs a controller call
         System.out.println(rb);
-        MvcResult r = mockMvc.perform(rb).andReturn(); // this could throw an exception
+        MvcResult r = mockMvc.perform(rb).andReturn();
         System.out.println("GET endpoint accessed?");
-//        System.out.println(r.getResponse().getContentAsString());
+
         String tr = r.getResponse().getContentAsString();
 
         ObjectMapper mapper = new ObjectMapper();
