@@ -62,6 +62,7 @@ public class CourseControllerTest {
     {
     }
 
+    // list all courses test
     @Test
     public void listAllCourses() throws Exception
     {

@@ -26,16 +26,18 @@ public class CourseServiceImplTest
     private CourseService courseService;
 
     @Before
-    public void setUp() {
+    public void setUp()
+    {
     }
 
     @After
-    public void tearDown() {
+    public void tearDown()
+    {
     }
 
     @Test
-    public void testFindCourseById() {
-
+    public void testFindCourseById()
+    {
         assertEquals("Data Science", courseService.findCourseById(1).getCoursename());
     }
 
@@ -52,5 +54,4 @@ public class CourseServiceImplTest
         courseService.delete(2);
         assertEquals(5, courseService.findAll().size());
     }
-
 }

@@ -27,7 +27,7 @@ public class CourseControllerIntegrationTest
 
     // Write an integrate test for response time for GET /courses/courses
     @Test
-    public void whenMeasuredReponseTime()
+    public void whenMeasuredResponseTime()
     {
         given().when().get("/courses/courses").then().time(lessThan(5000L));
     }
