@@ -17,4 +17,8 @@ public interface CourseService
     ArrayList<CountStudentsInCourses> getCountStudentsInCourse();
 
     void delete(long id);
+
+    // Add a method for Adding a new course called save
+    Course save(Course course);
+
 }
