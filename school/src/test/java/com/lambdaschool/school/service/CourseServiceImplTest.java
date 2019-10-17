@@ -30,25 +30,25 @@ public class CourseServiceImplTest
     private InstructorService instructorService;
 
     @Before
-    public void setUp()
+    public void A_setUp()
     {
     }
 
     @After
-    public void tearDown()
+    public void B_tearDown()
     {
     }
 
     // unit test findCourseById
     @Test
-    public void testFindCourseById()
+    public void C_testFindCourseById()
     {
         assertEquals("Data Science", courseService.findCourseById(1).getCoursename());
     }
 
     // unit test deleteNotFound
     @Test (expected = EntityNotFoundException.class)
-    public void deleteNotFound()
+    public void F_deleteNotFound()
     {
         courseService.delete(100);
         assertEquals(6, courseService.findAll().size());
@@ -56,7 +56,7 @@ public class CourseServiceImplTest
 
     // unit test deleteFound
     @Test
-    public void deleteFound()
+    public void E_deleteFound()
     {
         courseService.delete(2);
         assertEquals(5, courseService.findAll().size());
@@ -64,7 +64,7 @@ public class CourseServiceImplTest
 
     // unit test save
     @Test
-    public void save()
+    public void G_save()
     {
         String courseName = "Learn Guitar";
         Instructor i1 = instructorService.findInstructorById(1);
