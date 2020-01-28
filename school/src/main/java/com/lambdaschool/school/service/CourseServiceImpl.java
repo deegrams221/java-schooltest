@@ -25,6 +25,18 @@ public class CourseServiceImpl implements CourseService
     }
 
     @Override
+    public Course findCourseById(long id)
+    {
+        return courserepos.findCourseByCourseid(id);
+    }
+
+    @Override
+    public Course findCourseByName(String name)
+    {
+        return null;
+    }
+
+    @Override
     public ArrayList<CountStudentsInCourses> getCountStudentsInCourse()
     {
         return courserepos.getCountStudentsInCourse();
@@ -42,5 +54,16 @@ public class CourseServiceImpl implements CourseService
         {
             throw new EntityNotFoundException(Long.toString(id));
         }
+    }
+
+    // add for save test
+    @Override
+    public Course save(Course course)
+    {
+        Course newCourse = new Course();
+        newCourse.setCoursename(course.getCoursename());
+        newCourse.setInstructor(course.getInstructor());
+
+        return courserepos.save(newCourse);
     }
 }

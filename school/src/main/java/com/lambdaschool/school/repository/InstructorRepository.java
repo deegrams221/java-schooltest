@@ -9,4 +9,7 @@ import java.util.ArrayList;
 public interface InstructorRepository extends CrudRepository<Instructor, Long>
 {
     ArrayList<Instructor> findInstructorsByInstructnameEquals (String name);
+
+    // add for save test
+    Instructor findInstructorByInstructid(long instructid);
 }
